@@ -1,6 +1,8 @@
 'use strict';
 
 eventsApp.controller('EventController', function EventController($scope) {
+    $scope.query = "";
+    $scope.sortOrder;``
     $scope.event = {
         name: 'Ricks Event',
         date: '7/15/2017',
@@ -27,7 +29,7 @@ eventsApp.controller('EventController', function EventController($scope) {
                 presenter: "Joe P",
                 duration: "2 hr",
                 level: "Beginner",
-                abstract: "This is a second beginner level session",
+                abstract: "This is a second beginner advanced level session",
                 upvoteCount: 0
             },
             {
