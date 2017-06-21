@@ -27,52 +27,57 @@
                     <div class="form-group">
                         <label class="col-sm-12" for="eventName">Event Name: </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control col-sm-6" id="eventName" placeholder="Name of Event">
+                            <input type="text" class="form-control col-sm-6" ng-model="event.name" id="eventName" placeholder="Name of Event">
                         </div>
                     </div>
                     <div class="form-group">
 
                         <label class="col-sm-12" for="eventDate">Event Date: </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control col-sm-6" id="eventDate" placeholder="Date of Event">
+                            <input type="text" class="form-control col-sm-6" ng-model="event.date" id="eventDate" placeholder="Date of Event">
                         </div>
                     </div>
                     <div class="form-group">
 
                         <label class="col-sm-12" for="eventTime">Event Time: </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control col-sm-6" id="eventTime" placeholder="Time of Event">
+                            <input type="text" class="form-control col-sm-6" ng-model="event.time" id="eventTime" placeholder="Time of Event">
                         </div>
                     </div>
                     <div class="form-group">
 
                         <label class="col-sm-12" for="eventAddress">Event Location: </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control col-sm-6" id="eventAddress" placeholder="Address of Event">
+                            <input type="text" class="form-control" id="eventAddress" ng-model="event.address" placeholder="Address of Event">
                         </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control col-sm-6" id="eventCity" placeholder="City">
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-3" style="padding-left:0px">
+                            <input type="text" class="form-control col-sm-6" ng-model="event.city" id="eventCity" placeholder="City">
                         </div>
+
                         <div class="col-sm-1">
-                            <input type="text" class="form-control col-sm-6" id="eventState" placeholder="Statet" maxlength=2 size=6>
+                            <input type="text" class="form-control col-sm-6" ng-model="event.state" id="eventState" placeholder="Statet" maxlength=2 size=6>
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control" id="eventZip" placeholder="Zip Code" maxlength=5 size=8>
+                            <input type="text" class="form-control" id="eventZip" ng-model="event.zip" placeholder="Zip Code" maxlength=5 size=8>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-12" for="eventImageUrl">Image URL: </label>
-                        <input type="text" class="form-control col-sm-6" id="eventImageUrl" placeholder="Image URL">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control col-sm-6" ng-model="event.imageUrl" id="eventImageUrl" placeholder="Image URL">
+                        </div>
                     </div>
+                    <div class="col-md-12">
+                        <img ng-src="{{event.imageUrl}}">
+                    </div>
+                    <div class="col-md-12" style="padding-top:15px">
 
-                    <img ng-src="{{event.imageUrl}}">
 
-
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-default">Cancel</button>
+                        <button type="submit" ng-click="saveEvent(event)" class="btn btn-primary">Save</button>
+                        <button type="button" ng-click="cancelEdit()" class="btn btn-default">Cancel</button>
+                    </div>
 
                 </fieldset>
             </form>
