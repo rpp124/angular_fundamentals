@@ -4,8 +4,12 @@
     <title>Event</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-
-
+<style>
+    input.ng-dirty.ng-invalid {
+        border: 2px solid red;
+        background-color: red;
+    }
+</style>
 </head>
 
 <body>
@@ -22,19 +26,19 @@
         <div class="container">
             <h1>New Event</h1>
             <hr>
-            <form>
+            <form name="editEventForm">
                 <fieldset>
                     <div class="form-group">
                         <label class="col-sm-12" for="eventName">Event Name: </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control col-sm-6" ng-model="event.name" id="eventName" placeholder="Name of Event">
+                            <input type="text" class="form-control col-sm-6" required ng-model="event.name" id="eventName" placeholder="Name of Event">
                         </div>
                     </div>
                     <div class="form-group">
 
                         <label class="col-sm-12" for="eventDate">Event Date: </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control col-sm-6" ng-model="event.date" id="eventDate" placeholder="Date of Event">
+                            <input type="text" class="form-control col-sm-6" required ng-pattern="/\d\d/\d\d/\d\d\d\d/" ng-model="event.date" id="eventDate" placeholder="mm/dd/yyyy">
                         </div>
                     </div>
                     <div class="form-group">
@@ -69,13 +73,13 @@
                             <input type="text" class="form-control col-sm-6" ng-model="event.imageUrl" id="eventImageUrl" placeholder="Image URL">
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-sm-6">
                         <img ng-src="{{event.imageUrl}}">
                     </div>
-                    <div class="col-md-12" style="padding-top:15px">
+                    <div class="col-sm-12" style="padding-top:15px">
 
 
-                        <button type="submit" ng-click="saveEvent(event)" class="btn btn-primary">Save</button>
+                        <button type="submit" ng-click="saveEvent(event, editEventForm)" ng-disabled="editEventForm.$invalid" class="btn btn-primary">Save</button>
                         <button type="button" ng-click="cancelEdit()" class="btn btn-default">Cancel</button>
                     </div>
 
