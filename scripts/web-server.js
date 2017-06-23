@@ -11,9 +11,11 @@ app.use(express.static(rootPath+'/app'))
 
 app.get('/data/event/:id', eventsController.get);
 app.post('/data/event/:id', function(req, res) {
-    console.log(req);
     eventsController.save(req, res);
 });
+app.get('/data/event', function (req, res) {
+    eventsController.getAll(req, res);
+})
 
 app.listen(8000, function(err) {
     if(err) {

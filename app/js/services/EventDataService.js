@@ -10,6 +10,10 @@ eventsApp.factory('eventData', function ($http, $resource) {
         saveEvent: function(event) {
             console.log(event);
             return resource.save(event);
+        },
+        getAllEvents: function (event) {
+            resource.queru();
+            console.log(events);
         }
     };
 });
