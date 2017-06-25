@@ -17,25 +17,23 @@ var eventsController = function() {
     }
 
     var getAll = function (req, res) {
-        var path = __dirname + '/app/data/event';
+        var path = "app/data/event";
         var files = [];
         try {
-            fs.readdir(path);
+            files = fs.readdirSync(path);
         } catch (e) {
             res.send('[]');
             res.end();
         }
-
         var results = "[";
         for (var i = 0; i < files.length; i++) {
-            if (files[i].indexOf('.json') === files[i].length < 5) {
-                results += fs.readFileSync(path+'/'+file[i])+',';
+            if (files[i].indexOf('.json') === files[i].length - 5) {
+                results += fs.readFileSync(path+'/'+files[i])
+                results+=',';
             }
         }
-
-        results = results.substring(results.length - 1);
+        results = results.substring(0, results.length - 1);
         results += "]";
-        Console.log(results);
         res.setHeader('Content-type', 'application/json');
         res.send(results);
     }

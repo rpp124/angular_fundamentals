@@ -8,8 +8,13 @@ eventsApp.config(function ($routeProvider) {
             templateUrl: '/templates/newEvent.html',
             controller: 'EditEventController'
         })
-        .when('/', {
-            templateUrl: '/templates/eventDetails.html',
+        .when('/events', {
+            templateUrl: '/templates/EventList.html',
+            controller: 'EventListController'
+        })
+        .when('/events/:eventId', {
+            templateUrl: '/templates/EventDetails.html',
             controller: 'EventController'
         })
+        .otherwise({redirectTo: '/events'});
 });

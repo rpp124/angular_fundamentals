@@ -3,17 +3,17 @@
 eventsApp.factory('eventData', function ($http, $resource) {
     var resource = $resource('/data/event/:id', {id: '@id'});
     return {
-        getEvent: function(success) {
-            return resource.get({id:1});
+        getEvent: function(eventId) {
+            return resource.get({id:eventId});
                 
         },
         saveEvent: function(event) {
             console.log(event);
             return resource.save(event);
         },
-        getAllEvents: function (event) {
-            resource.queru();
-            console.log(events);
+        getAllEvents: function () {
+            var results = resource.query()
+            return results;
         }
     };
 });

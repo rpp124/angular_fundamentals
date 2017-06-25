@@ -28,19 +28,16 @@
 
                         <label class="col-sm-12" for="eventAddress">Event Location: </label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="eventAddress" ng-model="event.address" placeholder="Address of Event">
+                            <input type="text" class="form-control" id="eventAddress" ng-model="event.location.address" placeholder="Address of Event">
                         </div>
                     </div>
                     <div class="form-group col-sm-12">
                         <div class="col-sm-3" style="padding-left:0px">
-                            <input type="text" class="form-control col-sm-6" ng-model="event.city" id="eventCity" placeholder="City">
+                            <input type="text" class="form-control col-sm-6" ng-model="event.location.city" id="eventCity" placeholder="City">
                         </div>
 
-                        <div class="col-sm-1">
-                            <input type="text" class="form-control col-sm-6" ng-model="event.state" id="eventState" placeholder="Statet" maxlength=2 size=6>
-                        </div>
-                        <div class="col-sm-2">
-                            <input type="text" class="form-control" id="eventZip" ng-model="event.zip" placeholder="Zip Code" maxlength=5 size=8>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control col-sm-6" ng-model="event.location.province" id="eventProvince" placeholder="Province/State">
                         </div>
                     </div>
                     <div class="form-group">
