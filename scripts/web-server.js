@@ -15,7 +15,11 @@ app.post('/data/event/:id', function(req, res) {
 });
 app.get('/data/event', function (req, res) {
     eventsController.getAll(req, res);
+});
+app.get('*', function(req, res) {
+    res.sendFile(rootPath+'/app/index.html');
 })
+
 
 app.listen(8000, function(err) {
     if(err) {

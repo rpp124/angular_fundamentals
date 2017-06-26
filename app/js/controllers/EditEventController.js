@@ -17,6 +17,6 @@ eventsApp.controller('EditEventController', function EditEventController($scope,
     }
 
     $scope.cancelEdit = function() {
-        window.location.href="/eventDetails.html";
+        window.location.href="/";
     }
 })
