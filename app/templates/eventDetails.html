@@ -46,17 +46,7 @@
                 <div class="well col-md-12">
                     <div class="row">
                         <div class="col-md-1">
-                            <div class="col-md-1 votingWidget">
-                                <div class="votingButton" ng-click="upvoteSession(session)">
-                                    <div><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
-                                </div>
-                                <div class="badge badge-inverse">
-                                    <div>{{session.upVoteCount}}</div>
-                                </div>
-                                <div class="votingButton" ng-click="downvoteSession(session)" ng-show="session.upVoteCount>0">
-                                    <div><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
-                                </div>
-                            </div>
+                            <voting-widget upvote="upvoteSession(session)" downvote="downvoteSession(session)" count="session.upVoteCount" />
                         </div>
                         <div class="col-md-11">
                             <h4 class="well-title">{{session.name}}</h4>

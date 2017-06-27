@@ -1,0 +1,11 @@
+<div class="col-md-1 votingWidget">
+    <div class="votingButton" ng-click="upvote()">
+        <div><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+    </div>
+    <div class="badge badge-inverse">
+        <div>{{count}}</div>
+    </div>
+    <div class="votingButton" ng-click="downvote()" ng-show="session.upVoteCount>0">
+        <div><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+    </div>
+</div>
