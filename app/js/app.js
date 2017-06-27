@@ -16,6 +16,10 @@ eventsApp.config(function ($routeProvider, $locationProvider) {
             templateUrl: '/templates/EventDetails.html',
             controller: 'EventController'
         })
+        .when('/editProfile', {
+            templateUrl: '/templates/editProfile.html',
+            controller: 'EditProfileController'
+        })
         .otherwise({redirectTo: '/events'});
         
         $locationProvider.html5Mode(true);
