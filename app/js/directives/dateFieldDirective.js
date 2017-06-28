@@ -19,9 +19,9 @@ eventsApp.directive('dateField', function () {
 });
 
 function checkKeyCode(event) {
-    
     if ((event.keyCode >= 48 && event.keyCode <= 57)
         || event.keyCode === 8 || event.keyCode === 46
+        || event.keyCode === 9 || event.keyCode === 16
         || event.keyCode === 35 || event.keyCode === 36
         || (event.keyCode >= 96 && event.keyCode <= 105)
         || (event.keyCode >= 37 && event.keyCode <= 40)) {

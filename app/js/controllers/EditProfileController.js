@@ -2,12 +2,11 @@
 
 eventsApp.controller('EditProfileController',
     function EditProfileController($scope, gravatarUrlBuilder) {
-        $scope.user = {
-            userName: 'Rick';
-        };
+        $scope.user = { };
         
 
         $scope.getGravatarUrl = gravatarUrlBuilder.buildGravatarUrl;
+        
 
     }
 );
